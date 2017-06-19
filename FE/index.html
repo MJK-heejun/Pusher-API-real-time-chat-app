@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="myChat2">
+<head>
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+  <link href="app.less" type="text/css" rel="stylesheet/less">
+</head>
+<body>
+
+  <!-- Livereload script for development only (stripped during dist build) -->
+  <script src="http://localhost:35729/livereload.js" data-concat="false"></script>
+
+  <script src="https://js.pusher.com/3.2/pusher.min.js"></script>
+
+  <!-- JS from Bower Components -->
+    <script src="bower_components/less.js/dist/less.min.js" data-concat="false"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+
+    <script src="bower_components/angular-ui-utils/index.js"></script>
+    <script src="bower_components/angular-ui-scroll/dist/ui-scroll.js"></script>
+    <script src="bower_components/angular-ui-scrollpoint/dist/scrollpoint.js"></script>
+    <script src="bower_components/angular-ui-event/dist/event.js"></script>
+    <script src="bower_components/angular-ui-mask/dist/mask.js"></script>
+    <script src="bower_components/angular-ui-validate/dist/validate.js"></script>
+    <script src="bower_components/angular-ui-indeterminate/dist/indeterminate.js"></script>
+    <script src="bower_components/angular-ui-uploader/dist/uploader.js"></script>
+
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+    <script src="bower_components/angular-pusher/angular-pusher.min.js"></script>
+
+  <!-- Add New Bower Component JS Above -->
+
+
+
+  <!-- Main App JS -->
+  <script src="app.js"></script>
+  <script src="directive/mainPanel/mainPanel.js"></script>  
+  <script src="directive/leftPanel/leftPanel.js"></script>
+  <script src="directive/rightPanel/rightPanel.js"></script>
+  <script src="directive/loginPage/loginPage.js"></script>  
+  <script src="service/chatService.js"></script>
+  <!-- Add New Component JS Above -->
+
+  <div>
+    <div id="content" class="container" ng-controller="myChatController">          
+      <login-page ng-if="!isLoggedIn"></login-page>
+      <div ng-if="isLoggedIn">
+        <main-panel></main-panel>
+      </div>      
+    </div>
+  </div>
+
+
+
+</body>
+</html>

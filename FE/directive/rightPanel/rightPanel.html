@@ -1,0 +1,29 @@
+<div id="rightPanel">
+	<div ng-show="!selectedChannel">
+		<strong>please select channel first</strong>
+	</div>
+	<div ng-if="selectedChannel">
+		<div>
+			You are in <strong>{{selectedChannel}}</strong>
+		</div>
+		<div ng-repeat="obj in messageList track by $index">
+			<div>
+				<strong>Username: {{obj.username}}</strong>
+			</div>
+			<div class="message">
+				{{obj.message}}
+			</div>
+		</div>	
+	</div>
+	<div layout="row" ng-show="selectedChannel">
+		<md-input-container md-no-float class="md-block" flex="80">
+        	<input ng-model="inputMessage" placeholder="My Message">
+    	</md-input-container>
+    	<div flex>
+			<md-button class="md-raised md-primary" ng-click="sendMessage()"> Send </md-button>
+		</div>
+	</div>
+
+
+	
+</div>

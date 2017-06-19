@@ -1,0 +1,24 @@
+<div id="leftPanel">
+
+    <md-content>
+        <md-list class="md-dense" ng-cloak>
+            <md-list-item class="repeat-item"
+                          ng-repeat="channel in channelList"
+                          ng-click="selectChannel(channel)"
+                          title="channel">
+                <span>
+                    <strong>{{channel}}</strong>
+                </span>
+            </md-list-item>
+        </md-list>
+    </md-content>
+	
+	<div layout="row">
+    <md-input-container md-no-float class="md-block">
+          <input ng-model="newChannelName" placeholder="New Channel Name">
+    </md-input-container>  
+    <div>  
+		  <md-button class="md-raised md-primary" ng-click="addChannel()"> Add Channel </md-button>
+    </div>
+	</div>
+</div>
